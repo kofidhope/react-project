@@ -6,13 +6,16 @@ import {
  from 'react-router-dom';
  import MainLayout from './Layout/MainLayout';
  import HomePage from './Pages/HomePage';
-
+ import JobPage from './Pages/JobPage';
+ import NotFoundPage from './Pages/NotFoundPage';
 
 const router = createBrowserRouter( 
     createRoutesFromElements(
         // creating a parent route to the rest of the route 
       <Route path='/' element = {<MainLayout/>}>
          <Route index element={<HomePage />}/>
+         <Route path='/jobs' element={<JobPage />}/>
+         <Route path='/*' element={<NotFoundPage />}/>
       </Route>
   )
 );
